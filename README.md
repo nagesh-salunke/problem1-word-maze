@@ -16,20 +16,20 @@ YES or NO
 
 ## Examples
 Input:
-3 4
-ABCE
-SFCS
-ADEE
-ABCCED
+3 4  
+ABCE  
+SFCS  
+ADEE  
+ABCCED  
 Output:
 YES
 
 Input:
-3 4
-ABCE
-SFCS
-ADEE
-SEE
+3 4  
+ABCE  
+SFCS  
+ADEE  
+SEE  
 Output:
 YES
 
