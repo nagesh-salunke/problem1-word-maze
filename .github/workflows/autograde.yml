@@ -24,7 +24,7 @@ jobs:
         run: |
           set -e
           mkdir -p results
-          for infile in tests/public/*.in; do
+          for infile in tests/*.in; do
             outfile="results/$(basename $infile .in).out"
             java Solution < "$infile" > "$outfile"
 
