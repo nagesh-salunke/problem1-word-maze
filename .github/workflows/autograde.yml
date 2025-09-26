@@ -30,7 +30,7 @@ jobs:
 
             # Normalize output
             tr -d '\r' < "$outfile" | sed '/^$/d' > "${outfile}.norm"
-            tr -d '\r' < "tests/public/$(basename $infile .in).out" | sed '/^$/d' > "tests/public/$(basename $infile .in).out.norm"
+            tr -d '\r' < "tests/$(basename $infile .in).out" | sed '/^$/d' > "tests/public/$(basename $infile .in).out.norm"
 
             if diff -q "${outfile}.norm" "tests/public/$(basename $infile .in).out.norm"; then
               echo "✅ $(basename $infile) passed"
@@ -39,7 +39,7 @@ jobs:
               echo "Input:"
               cat "$infile"
               echo "Expected:"
-              cat "tests/public/$(basename $infile .in).out.norm"
+              cat "tests/$(basename $infile .in).out.norm"
               echo "Got:"
               cat "${outfile}.norm"
               exit 1
