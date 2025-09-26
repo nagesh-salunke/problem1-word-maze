@@ -32,7 +32,7 @@ jobs:
             tr -d '\r' < "$outfile" | sed '/^$/d' > "${outfile}.norm"
             tr -d '\r' < "tests/$(basename $infile .in).out" | sed '/^$/d' > "tests/$(basename $infile .in).out.norm"
 
-            if diff -q "${outfile}.norm" "tests/public/$(basename $infile .in).out.norm"; then
+            if diff -q "${outfile}.norm" "tests/$(basename $infile .in).out.norm"; then
               echo "✅ $(basename $infile) passed"
             else
               echo "❌ $(basename $infile) failed"
